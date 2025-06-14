@@ -1855,7 +1855,11 @@ ul {
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu-toggle {
+<<<<<<< HEAD
         display: flex;
+=======
+        display: block;
+>>>>>>> ff0183b122d0045930f3498a0a7faaae8c4bcaef
     }
 
     .nav-links {
