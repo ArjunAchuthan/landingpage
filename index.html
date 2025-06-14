@@ -588,10 +588,12 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNav = document.querySelector('.main-navigation');
 
-        menuToggle.addEventListener('click', () => {
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('is-active');
             menuToggle.classList.toggle('is-active');
         });
+    }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

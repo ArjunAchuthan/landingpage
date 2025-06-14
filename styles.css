@@ -22,6 +22,7 @@ body {
     background-color: #ffffff;
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
 }
 
 .header-container {
@@ -124,6 +125,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
+    z-index: 999;
 }
 
 .menu-toggle span {
@@ -151,7 +153,7 @@ body {
     .main-navigation {
         display: none; /* Hide nav by default */
         position: absolute;
-        top: 100%;
+        top: 120px;
         left: 0;
         width: 100%;
         background-color: #fff;
@@ -531,24 +533,26 @@ body {
     transform: translateY(-2px);
 }
 
-
-/* --- Responsive Design for Mobile --- */
+/* --- Responsive Design for the Company Card --- */
 @media (max-width: 768px) {
     .company-card {
         flex-direction: column;
     }
-
-    .card-logo-pane {
-        padding: 50px 30px; /* Adjust padding for vertical layout */
-    }
-
+    .card-logo-pane,
     .card-content-pane {
-        padding: 30px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is calculated correctly */
+    }
+    .card-logo-pane {
+        height: 250px; /* You can adjust this height if needed */
+        padding: 0;
+    }
+    .card-content-pane {
+        padding: 40px 25px; /* Adjusts padding for mobile */
         text-align: center;
     }
-
     .btn-learn-more {
-        align-self: center; /* Center the button on mobile */
+        align-self: center;
     }
 }
 
@@ -718,25 +722,26 @@ body {
 }
 
 @media (max-width: 576px) {
+
     .call-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-        background-color: #007bff; /* Use the bright blue for mobile */
+        min-height: auto; /* Allows the banner to shrink vertically */
     }
     
-    .banner-shape-img {
-        display: none; /* Hide the shape image on small screens */
-    }
-
     .phone-icon {
-        position: static; /* Let it be part of the normal document flow */
-        transform: none;
-        margin-bottom: 15px;
+        width: 50px;
+        left: 15px;
+    }
+    .banner-text {
+        padding: 20px 20px 20px 120px; 
     }
 
-    .banner-text {
-        padding: 0; /* Remove the large padding */
+    .banner-text p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .contact-number {
+        font-size: 1.2rem;
     }
 }
 
@@ -993,16 +998,14 @@ body {
     }
 }
 
+/* --- Corrected Responsive Design for Mobile --- */
 @media (max-width: 576px) {
     .faq-item {
-        flex-wrap: wrap; /* Allow items to wrap on small screens */
+        gap: 15px; 
         padding: 20px 0;
     }
-    .faq-number {
-        display: none; /* Hide the large numbers on mobile to save space */
-    }
-    .faq-arrow {
-        margin-left: auto; /* Push the arrow to the right end */
+    .faq-number img {
+        width: 60px;
     }
 }
 
